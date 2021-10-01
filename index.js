@@ -49,7 +49,7 @@ var questions = [{
     b: "Janine",
     c: "Chandler"
   },
-  answer: "a"
+  answer: "b"
 },
 {
   question: "What’s Phoebe’s sister’s name? ",
