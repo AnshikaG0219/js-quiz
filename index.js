@@ -3,7 +3,7 @@ var readlineSync = require("readline-sync");
 function welcome() {
  var userName = readlineSync.question("What's your name? ");
 
-  console.log("Welcome "+ userName + " to DO YOU KNOW Anshika?");
+  console.log("Welcome "+ userName + " to F.R.I.E.N.D.S. Quiz  ");
   game(userName);
 }
 
@@ -13,7 +13,6 @@ var highScores = {
     name: "Anshika",
     score: 3,
 }
-
 // array of objects
 var questions = [{
   question: "Which character has a twin? ",
@@ -66,6 +65,7 @@ var questions = [{
 // play function
 function play(question, answer, options) {
   console.log(question);
+  
   for(const key in options){
     console.log(`${key}  : ${options[key]}`);
   }
@@ -90,16 +90,16 @@ function game(userName) {
     var currentQuestion = questions[i];
     play(currentQuestion.question, currentQuestion.answer, currentQuestion.options)
   }
-  showScores(score, userName);
+  showScores(userName);
 }
 
-function showScores(currScore, userName) {
+function showScores(userName) {
   console.log("YAY! You SCORED: ", score);
 
-  if(highScores.score <= currScore)
+  if(highScores.score <= score)
   {
     highScores.name = userName;
-    highScores.score = currScore;
+    highScores.score = score;
   }
   console.log("Check out the high scores!");
   console.log(highScores.name, " : ", highScores.score);
