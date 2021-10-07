@@ -106,5 +106,3 @@ function showScores(userName) {
 }
 
 welcome();
-
-
